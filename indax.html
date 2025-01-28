@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Are We Best Friends?</title>
+    <style>
+        body {
+            background-color: #283655; /* Dark Blue for friendship theme */
+            color: #f4a261; /* Warm orange for friendly vibe */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 3.5em;
+            color: #f4a261; /* Warm orange */
+            animation: glow 1.5s ease-in-out infinite alternate;
+        }
+
+        @keyframes glow {
+            from { text-shadow: 0 0 20px #f4a261, 0 0 30px #f4a261; }
+            to { text-shadow: 0 0 30px #e9c46a, 0 0 50px #e9c46a; }
+        }
+
+        .emoji {
+            font-size: 4em;
+            color: #e9c46a; /* Yellow for fun vibe */
+            animation: bounce 1.5s infinite ease-in-out;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .buttons {
+            margin-top: 20px;
+        }
+
+        button {
+            font-size: 1.5em;
+            padding: 12px 25px;
+            margin: 10px;
+            border: none;
+            cursor: pointer;
+            background-color: #f4a261; /* Orange */
+            color: white;
+            border-radius: 20px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        button:hover {
+            background-color: #2a9d8f; /* Teal */
+            transform: scale(1.1); /* Slightly enlarge on hover */
+        }
+
+        .friendship-message {
+            font-size: 1.8em;
+            color: #e9c46a; /* Yellow */
+            margin-top: 20px;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { opacity: 0.7; }
+            50% { opacity: 1; }
+            100% { opacity: 0.7; }
+        }
+
+        .noButton-moving {
+            transition: transform 0.1s ease-in-out; /* Fast movement */
+        }
+
+        footer {
+            font-size: 1.2em;
+            color: #e9c46a; /* Yellow */
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Are we best friends?</h1>
+    <div class="emoji">🤝</div>
+    <div class="buttons">
+        <button onclick="respond('Yes')">Yes</button>
+        <button id="noButton" class="noButton-moving" onmouseover="moveNoButton()">No</button>
+    </div>
+    <div class="friendship-message">Best friends are forever!</div>
+
+    <footer>Made by RBEH</footer>
+
+    <script>
+        function respond(answer) {
+            if (answer === 'Yes') {
+                alert("I knew it! You're my best friend! 🥳");
+            }
+        }
+
+        function moveNoButton() {
+            const noButton = document.getElementById("noButton");
+            const x = Math.floor(Math.random() * 300) - 150; // Random x-axis movement
+            const y = Math.floor(Math.random() * 300) - 150; // Random y-axis movement
+            noButton.style.transform = translate(${x}px, ${y}px);
+        }
+    </script>
+</body>
+</html>
